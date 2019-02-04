@@ -206,20 +206,20 @@ namespace chaiscript
         switch (t_oper)
         {
           case Operators::Opers::assign:
-            t = u;
+            t = static_cast<T>(u);
             break;
           case Operators::Opers::assign_product:
-            t *= u;
+            t *= static_cast<T>(u);
             break;
           case Operators::Opers::assign_sum:
-            t += u;
+            t += static_cast<T>(u);
             break;
           case Operators::Opers::assign_quotient:
             check_divide_by_zero(u);
-            t /= u;
+            t /= static_cast<T>(u);
             break;
           case Operators::Opers::assign_difference:
-            t -= u;
+            t -= static_cast<T>(u);
             break;
           default:
             throw chaiscript::detail::exception::bad_any_cast();
@@ -234,23 +234,23 @@ namespace chaiscript
         switch (t_oper)
         {
           case Operators::Opers::assign_bitwise_and:
-            t &= u;
+            t &= static_cast<T>(u);
             break;
           case Operators::Opers::assign_bitwise_or:
-            t |= u;
+            t |= static_cast<T>(u);
             break;
           case Operators::Opers::assign_shift_left:
-            t <<= u;
+            t <<= static_cast<T>(u);
             break;
           case Operators::Opers::assign_shift_right:
-            t >>= u;
+            t >>= static_cast<T>(u);
             break;
           case Operators::Opers::assign_remainder:
             check_divide_by_zero(u);
-            t %= u;
+            t %= static_cast<T>(u);
             break;
           case Operators::Opers::assign_bitwise_xor:
-            t ^= u;
+            t ^= static_cast<T>(u);
             break;
           default:
             throw chaiscript::detail::exception::bad_any_cast();
