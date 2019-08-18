@@ -127,13 +127,14 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GN
   # enable even more warnings in clang
   if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_compile_options(chaiscript INTERFACE -Weverything -Wno-c++98-compat-pedantic
-                                                -Wno-c++98-compat -Wno-documentation
-                                                -Wno-switch-enum -Wno-weak-vtables
-                                                -Wno-missing-prototypes -Wno-padded
-                                                -Wno-missing-noreturn
+                                                -Wno-c++98-compat -Wno-c++2a-compat
+                                                -Wno-documentation -Wno-switch-enum
+                                                -Wno-weak-vtables -Wno-missing-prototypes
+                                                -Wno-padded -Wno-missing-noreturn
                                                 -Wno-exit-time-destructors
                                                 -Wno-documentation-unknown-command
-                                                -Wno-unused-template -Wno-range-loop-analysis)
+                                                -Wno-unused-template -Wno-range-loop-analysis
+                                                -Wno-defaulted-function-deleted)
   endif()
   # disable warnings in gcc
   if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
