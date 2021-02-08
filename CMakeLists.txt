@@ -106,7 +106,7 @@ endif()
 # add additional build options when using clang
 if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND UNIX)
   # use clangs libc++
-  option(USE_LIBCXX "Use clang's libcxx" ON)
+  option(USE_LIBCXX "Use clang's libcxx" OFF)
   if(USE_LIBCXX)
     target_compile_options(chaiscript INTERFACE -stdlib=libc++)
     target_link_libraries(chaiscript INTERFACE -stdlib=libc++)
